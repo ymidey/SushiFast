@@ -1,0 +1,43 @@
+<head>
+    <style>
+    #historique {
+      font-family: Arial, Helvetica, sans-serif;
+      width: 100%;
+      
+    }
+    
+    td, th {
+      border: 1px solid white;
+      padding: 8px;
+    }
+    
+    
+    #historique th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: black;
+      color: white;
+    }
+    </style>
+    </head>
+<body>
+    <div class="historique">
+        <h1>Historique des commandes</h1>
+    </div>
+    <table id="historique">
+        <tr>
+          <th width="10%">Order ID</th>
+          <th width="15%">Date</th>
+          <th width="25%">price</th>
+          <th width="25%">Status </th>
+        </tr>
+        <tr *ngFor="let hist of histo let i = index">
+          <td>{{i + 1}}</td>
+          <th>{{now}}</th>
+          <th>{{hist}} €</th>
+          <th>Paid</th>
+         
+      </tr>
+      </table>
+</body>

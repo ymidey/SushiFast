@@ -1,0 +1,39 @@
+<ng-container *ngIf="true">
+    <div id = "ici"></div>
+    <table class="tablepanier">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let boxe of Boxes; let i = index">
+                <td><img src="./assets/pictures/{{boxe.image}}.jpg" class="card__image"></td>
+                <th>{{boxe.nom}}</th>
+                <th>{{boxe.prix}} €</th>
+                <th>{{boxe.quantite}}</th>
+                <th>{{boxe.Total}}</th>
+                <td>
+                    <button class="card-button" (click)=removeitem(boxe)>Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="false">
+    <h4>Your cart is empty</h4>
+    <h6>Add item to it now</h6>
+    <button class="">
+        <a class="custom-button">TO COOK</a>
+    </button>
+</ng-container>

@@ -1,16 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RgpdComponent } from './components/rgpd/rgpd.component';
+import { BoxsComponent } from './components/boxs/boxs.component';
+import { BoxComponent } from './components/box/box.component';
+import { PanierComponent } from './components/panier/panier.component';
+import { HistoriqueCommandeComponent } from './components/historique-commande/historique-commande.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    RgpdComponent,
+    BoxsComponent,
+    BoxComponent,
+    PanierComponent,
+    HistoriqueCommandeComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
