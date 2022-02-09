@@ -9,7 +9,9 @@
                         <p>{{box.prix}} €<br /> {{box.pieces}} pièces
                         </p>
                         <button class="card-button" (click)="affModal(box.id -1)">Read more</button>&nbsp;
-                        <a class="bouton-cart"><img src="https://cdn.discordapp.com/attachments/917717231801098260/920374279097430046/basket_icon-icons.com_67985.png" (click)=addtocart(box) class="cart-frame-image"></a>
+                        <a class="bouton-cart"><img
+                                src="https://cdn.discordapp.com/attachments/917717231801098260/920374279097430046/basket_icon-icons.com_67985.png"
+                                (click)=addtocart(box) class="cart-frame-image"></a>
                     </figcaption>
                 </figure>
             </div>
@@ -30,8 +32,10 @@
                 <p>SAVEURS :</p>
                 <p> {{boxmodal.saveurs}}</p>
             </div>
-            
-            <a class="bouton-cart"><img src="https://cdn.discordapp.com/attachments/917717231801098260/920374279097430046/basket_icon-icons.com_67985.png" (click)=addtocart(boxmodal) class="cart-frame-image"></a>
+
+            <a class="bouton-cart"><img
+                    src="https://cdn.discordapp.com/attachments/917717231801098260/920374279097430046/basket_icon-icons.com_67985.png"
+                    (click)=addtocart(boxmodal) class="cart-frame-image"></a>
             <button class="card-button" (click)="affModal(0)">Fermer</button>
         </div>
     </div>
@@ -57,5 +61,6 @@
             </td>
         </tr>
     </tbody>
-    <h3 style="text-align: center;" class="total-panier">Total : {{grandTotal}} €<button class="cart-button" (click)=addToHistorique()>Payer</button></h3>
+    <h3 style="text-align: center;" class="total-panier">Total : {{grandTotal}} €<button class="cart-button"
+            (click)=addToHistorique()>Payer</button></h3>
 </table>

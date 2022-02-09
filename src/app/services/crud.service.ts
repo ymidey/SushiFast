@@ -29,11 +29,11 @@ export class CrudService {
   constructor(private http: HttpClient) { }
 
   //contient tout ce que le client ajoute a son panier de la commande
-  public panierItemList : any=[];
+  public panierItemList: any = [];
   public boxList = new BehaviorSubject<any>([]);
 
   //historique des commandes, a chaque commande passer on ajoute sont prix dans l'historique
-  histoData : any = [];
+  histoData: any = JSON.parse(localStorage.getItem('Historique') || '[]')
 
   bol_to_remove_one = false
 
@@ -55,35 +55,34 @@ export class CrudService {
     );
   }
   //getteur pour avoir le panier
-  getpanierItemList(){
+  getpanierItemList() {
     return this.panierItemList
   }
   //ajout au menu
-  addtoCart(box : any){
+  addtoCart(box: any) {
     this.panierItemList.push(box);
     this.boxList.next(this.panierItemList);
-   
   }
   //getteur pour avoir le prix total de la commande 
-  getTotalPrice() : number{
+  getTotalPrice(): number {
     let grandTotal = 0;
-    this.panierItemList.map((a:any)=>{
+    this.panierItemList.map((a: any) => {
       grandTotal += a.prix;
     })
-    return Math.round(grandTotal * 100) / 100 ;
+    return Math.round(grandTotal * 100) / 100;
   }
   //fonction pour retirer un menu de la commande en cours
-  removeCartItem(boxe: any){
+  removeCartItem(boxe: any) {
     this.bol_to_remove_one = false
-    this.panierItemList.map((a:any, index:any)=>{
-      if(boxe.id === a.id && this.bol_to_remove_one == false ){
-        this.panierItemList.splice(index,1); this.bol_to_remove_one = true
+    this.panierItemList.map((a: any, index: any) => {
+      if (boxe.id === a.id && this.bol_to_remove_one == false) {
+        this.panierItemList.splice(index, 1); this.bol_to_remove_one = true
       }
     })
-    
+
   }
 
-  removeAllCart(){
+  removeAllCart() {
     this.panierItemList = []
     this.boxList.next(this.panierItemList);
   }
