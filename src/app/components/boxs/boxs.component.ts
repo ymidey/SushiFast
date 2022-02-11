@@ -65,7 +65,12 @@ export class BoxsComponent implements OnInit {
   //ajout de la commande a l'historique
   addToHistorique() {
     if (this.grandTotal != 0) {
-      this.crudService.histoData.push(this.crudService.getTotalPrice());
+      var date = new Date();
+      const formatDate = (current_datetime: any) => {
+        let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + "h" + current_datetime.getMinutes() + "m" + current_datetime.getSeconds() + "s";
+        return formatted_date
+      }
+      this.crudService.histoData.push([this.crudService.getTotalPrice(), formatDate(date)]);
       //   console.log(this.crudService.histoData);
       this.box = []
       this.crudService.panierItemList = []
@@ -73,6 +78,7 @@ export class BoxsComponent implements OnInit {
       /* alert("Achat effectué avec succès") */
       let tabItems = JSON.stringify(this.crudService.histoData)
       localStorage.setItem('Historique', tabItems);
+      alert("Payement effectué avec succès, bonne appétit 🍽")
     } else {
       alert("Veuillez choissir un plat avant de commander !!! ")
     }

@@ -36,8 +36,8 @@
     </tr>
     <tr *ngFor="let hist of histo let i = index">
       <td>{{i + 1}}</td>
-      <th>{{now}}</th>
-      <th>{{hist}} €</th>
+      <th>{{hist[1]}}</th>
+      <th>{{hist[0]}} €</th>
       <th>Paid</th>
     </tr>
   </table>

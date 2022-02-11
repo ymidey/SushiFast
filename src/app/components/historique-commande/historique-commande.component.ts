@@ -15,11 +15,8 @@ export class HistoriqueCommandeComponent implements OnInit {
   constructor(public crudService: CrudService) { }
 
   ngOnInit(): void {
-    //on récupère l'historique depuis le localstorage
+    //on récupère l'historique (prix des commandes ainsi que leurs dates de payement) depuis le localstorage
     this.histo = JSON.parse(localStorage.getItem('Historique') || '[]');
-    //on récupère la date local
-    this.now = new Date().toLocaleDateString();
-
   }
   deleteHistorique() {
     if (confirm("Etes-vous sur de vouloir supprimer l'historique ?")) {
