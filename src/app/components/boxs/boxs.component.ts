@@ -70,7 +70,7 @@ export class BoxsComponent implements OnInit {
         let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + "h" + current_datetime.getMinutes() + "m" + current_datetime.getSeconds() + "s";
         return formatted_date
       }
-      this.crudService.histoData.push([this.crudService.getTotalPrice(), formatDate(date)]);
+      this.crudService.histoData.push([this.crudService.getTotalPrice(), formatDate(date), this.box]);
       //   console.log(this.crudService.histoData);
       this.box = []
       this.crudService.panierItemList = []
