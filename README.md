@@ -1,4 +1,4 @@
-# <center><img src="https://cdn.discordapp.com/attachments/468472388431118346/920264406909198366/pusheen-sushi-unscreen.gif" style="zoom: 33%;" /><img src="https://media.discordapp.net/attachments/917717231801098260/920265411877011546/sushifast-logo-github.png" style="zoom: 67%;" /><img src="https://cdn.discordapp.com/attachments/468472388431118346/920264406909198366/pusheen-sushi-unscreen.gif" style="zoom: 33%;" />
+# <center><img src="https://cdn.discordapp.com/attachments/468472388431118346/920264406909198366/pusheen-sushi-unscreen.gif" style="zoom: 33%;" /><img src="https://media.discordapp.net/attachments/917717231801098260/920265411877011546/sushifast-logo-github.png" style="zoom: 67%;" />
 
 ### *Présentation*
 
@@ -102,6 +102,7 @@ Dépôts GitHub : https://github.com/BGuiIlot/SushiFast
 ### *RGPD*
 
 <img src="https://cdn.discordapp.com/attachments/468472388431118346/920255888361672724/RGPD.PNG" alt="Une image contenant texte  Description générée automatiquement" style="zoom:150%;" />
+<<<<<<< HEAD
 
 <h1>Mise en place/ Commandes</h1>
 
@@ -150,3 +151,5 @@ Voici a quoi ressemble le code concernant l'historique.
 
 enfin, voici la page RGPD mais cette fois en ligne comme demandé.
 ![img](https://media.discordapp.net/attachments/415449138747146250/940899808804212746/unknown.png)
+=======
+>>>>>>> beae29e8a190b0bc33537512599fd63a96ce203e
