@@ -54,10 +54,7 @@ export class BoxsComponent implements OnInit {
     if (this.showModal) {
       this.showModal = false;
     } else {
-      // console.log("Modal indice :" + i);    
-      //console.log("Modal nom plateau :" + this.Boxes[i].nom);
       this.boxmodal = this.Boxes[i];
-      // console.log(this.box)
       this.showModal = true;
     }
   }
@@ -67,7 +64,7 @@ export class BoxsComponent implements OnInit {
     if (this.grandTotal != 0) {
       var date = new Date();
       const formatDate = (current_datetime: any) => {
-        let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + "h" + current_datetime.getMinutes() + "m" + current_datetime.getSeconds() + "s";
+        let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear() + " " + current_datetime.getHours() + "h" + current_datetime.getMinutes() + "m" + current_datetime.getSeconds() + "s";
         return formatted_date
       }
       this.crudService.histoData.push([this.crudService.getTotalPrice(), formatDate(date), this.box]);

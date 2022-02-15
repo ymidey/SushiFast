@@ -16,7 +16,7 @@ export class HistoriqueCommandeComponent implements OnInit {
   ngOnInit(): void {
     //on récupère l'historique (prix des commandes ainsi que leurs dates de payement) depuis le localstorage
     this.histo = JSON.parse(localStorage.getItem('Historique') || '[]').map((hist: any, index: Number) => {
-      hist[2] = hist[2].reduce((prev: any, current: any, count: Number) => count ? prev + current.prix + " € -" + current.nom : current.prix + " € - " + current.nom, ""); return hist
+      hist[2] = hist[2].reduce((prev: any, current: any, count: Number) => count ? prev + " " + this.transform(current.prix) + " - " + current.nom : current.prix + " € - " + current.nom, ""); return hist
     });
 
   }
@@ -25,6 +25,10 @@ export class HistoriqueCommandeComponent implements OnInit {
       localStorage.removeItem('Historique')
       location.reload();
     }
+  }
+
+  transform(value: number): string {
+    return `${value.toFixed(2)} €`;
   }
 
 }

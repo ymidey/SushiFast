@@ -102,27 +102,20 @@ Dépôts GitHub : https://github.com/BGuiIlot/SushiFast
 ### *RGPD*
 
 <img src="https://cdn.discordapp.com/attachments/468472388431118346/920255888361672724/RGPD.PNG" alt="Une image contenant texte  Description générée automatiquement" style="zoom:150%;" />
-<<<<<<< HEAD
 
-<h1>Mise en place/ Commandes</h1>
+<h1>Installation du projet et de de ses librairies</h1>
 
- 
+Ouvrez un terminal git bash puis placez vous dans le dossier dans lequel vous voulez importez le projet.
 
-Tout d’abord il faut créer le projet Angular. Pour cela nous exécutons la commande suivante : ng new SushiFast –routing=true
+Ensuite, effectuez la commande : 
 
- 
+<code>
+git clone https://github.com/ymidey/SushiBackup.git
+</code>
 
-A l’emplacement voulu.
+Ensuite, pour récupérer toutes les librairies, effectuez la commande :
 
- 
-
-Après avoir testé que tout s’est bien déroulé, on essaie de lancer le serveur avec la commande : ng serve
-
- 
-
-Ensuite, nous allons créer plusieurs composant via la commande : ng g c « nom du composant »
-
-Il y a donc le composant :boxs, footer, header, home, panier et rgpd.
+<code>npm install</code>
 
 <h1>Développement</h1>
 
@@ -149,7 +142,6 @@ Maintenant dans "historique-commande.component". Ce component a pour but de rép
 Voici a quoi ressemble le code concernant l'historique.
 ![img](https://media.discordapp.net/attachments/415449138747146250/940907667998801960/unknown.png)
 
-enfin, voici la page RGPD mais cette fois en ligne comme demandé.
-![img](https://media.discordapp.net/attachments/415449138747146250/940899808804212746/unknown.png)
-=======
->>>>>>> beae29e8a190b0bc33537512599fd63a96ce203e
+<h1>EvilUser-Story</h1>
+
+

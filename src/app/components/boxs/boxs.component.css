@@ -30,11 +30,11 @@ body {
     text-align: center;
     padding: 1vh;
     background-color: rgb(0, 0, 0);
-    border: 1px solid gold;
+    border: 1px solid #90dbf4;
 }
 
 .card:hover {
-    background-color: gold;
+    background-color: #90dbf4;
     transition: all 0.35s ease;
     color: black;
     border: 1px solid black;
@@ -49,7 +49,7 @@ body {
 
 .card-button {
     text-decoration: none;
-    color: gold;
+    color: #90dbf4;
     font-size: 1.5em;
     background-color: black;
     padding: 5px;
@@ -65,7 +65,7 @@ body {
 }
 
 .card-button:hover {
-    background: gold;
+    background: #90dbf4;
     border: 2px solid black;
     color: black;
     padding: 5px;
@@ -145,7 +145,7 @@ body {
 }
 
 .cart-frame-image:hover {
-    background: gold;
+    background: #90dbf4;
     border: 2px solid black;
     color: black;
     padding: 5px;
@@ -157,7 +157,7 @@ body {
     bottom: 250px;
     z-index: 50;
     background-color: rgba(0, 0, 0, 0.8);
-    border: solid 1px gold;
+    border: solid 1px #90dbf4;
     color: white;
     max-height: 600px;
     max-width: auto;
@@ -167,7 +167,7 @@ body {
 
 .cart-button {
     text-decoration: none;
-    color: gold;
+    color: #90dbf4;
     font-size: 16px;
     background-color: black;
     padding: 1px;
@@ -183,7 +183,7 @@ body {
 }
 
 .cart-button:hover {
-    background: gold;
+    background: #90dbf4;
     border: 2px solid black;
     color: black;
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -204,22 +204,22 @@ th {
 
 /* Track */
 
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #212121;
 }
 
 
 /* Handle */
 
- ::-webkit-scrollbar-thumb {
-    background: gold;
+::-webkit-scrollbar-thumb {
+    background: #90dbf4;
 }
 
 
 /* Handle on hover */
 
- ::-webkit-scrollbar-thumb:hover {
-    background: goldenrod;
+::-webkit-scrollbar-thumb:hover {
+    background: grayenrod;
 }
 
 .total-panier {
