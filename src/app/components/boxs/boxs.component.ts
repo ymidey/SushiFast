@@ -32,8 +32,6 @@ export class BoxsComponent implements OnInit {
 
   //récupère un menu en fonction de son  id et l'ajoute a notre commande
   fetchBox(id: number) {
-
-
     return this.crudService.getBox(id.toString())
       .subscribe(res => {
         if (res != null) {
@@ -102,5 +100,7 @@ export class BoxsComponent implements OnInit {
   }
   emptycart() {
     this.crudService.removeAllCart();
+    this.box = [];
+    this.grandTotal = this.crudService.getTotalPrice(); console.log("prix total = " + this.grandTotal)
   }
 }

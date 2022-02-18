@@ -18,7 +18,6 @@ export interface boxes {
   image: string
 }
 
-
 const urlrest = 'http://localhost:3000';
 
 @Injectable({
@@ -54,7 +53,7 @@ export class CrudService {
       catchError(this.handleError)
     );
   }
-  //getteur pour avoir le panier
+  //Fonction pour récuperer le panier
   getpanierItemList() {
     return this.panierItemList
   }
@@ -63,7 +62,7 @@ export class CrudService {
     this.panierItemList.push(box);
     this.boxList.next(this.panierItemList);
   }
-  //getteur pour avoir le prix total de la commande 
+  //Function pour avoir le prix total de la commande 
   getTotalPrice(): number {
     let grandTotal = 0;
     this.panierItemList.map((a: any) => {
