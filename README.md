@@ -499,25 +499,31 @@ Cette page à pour but de présenter l'entreprise, de montrer les finalités des
 Test unitaire de la variable <code>showModal</code>
 
 Test unitaire :
+  
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/943067993053736980/TestUnitaireShowModal.PNG)
 
 Fonction affModal pour appeler showModal :
+  
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/943068046921183232/ShowModal.PNG)
 
 Test unitaire de la fonction <code>transform</code>
 
 Test unitaire : 
+  
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/943077263283470356/Transform.PNG)
 
 Fonction transform :
+  
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/943077208694595594/TestUnitaireTransform.PNG)
 
 Test unitaire pour vérifier si mon titre s'affiche sur ma page <code>RGPD</code>.
 
 Test unitaire :
+  
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/943077352760561674/TestUnitTitle.PNG)
 
 Code de ma page html rgpd :
+  
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/943077500823683102/TtitleRGPD.PNG)
 
 Test unitaire pour vérifier si je recupère les réponses que j'attend de mon appel api.
