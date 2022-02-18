@@ -103,9 +103,9 @@ Dépôts GitHub : https://github.com/ymidey/SushiBackup
 
 ## Seconde partie 
 
-### Installation du projet et de de ses librairies
+### Installation du projet et de ses librairies
 
-Ouvrez un terminal git bash puis placez vous dans le dossier dans lequel vous voulez importez le projet.
+Ouvrez un terminal git bash puis placez-vous dans le dossier dans lequel vous voulez importer le projet.
 
 Ensuite, effectuez la commande : 
 
@@ -193,7 +193,7 @@ private handleError(error: HttpErrorResponse): any {
 
   ```
 Pour appeler notre api, nous allons donc utiliser deux fonctions :
-<code> getBoxes()</code> :
+<code>getBoxes()</code> :
 ```typescript
 //fonction pour récupérer toutes les boxes de l'api SushiShop
 getBoxes(): Observable<any> {
@@ -211,7 +211,7 @@ getBoxes(): Observable<any> {
     );
   }
   ```
-Suite à l'appel de notre api, nous pouvons mettre en forme les réponses reçues. Pour se faire, à l'aide de cette fonction dans le fichier <code>boxs.component.ts</code>
+Suite à l'appel de notre api, nous pouvons mettre en forme les réponses reçues. Pour ce faire, à l'aide de cette fonction dans le fichier <code>boxs.component.ts</code>
 ```typescript
 //récupère tous les menus depuis le crudService
   fetchBoxes() {
@@ -247,11 +247,11 @@ L'interface de nos commandes ressemble donc à ceci :
 
 ### Affichage du modal
 
-Si l'opérateur veut avoir plus de détail sur une boxe spécifique, il peut cliquer sur le bouton "voir plus" qui appelera la fonction <code>affModal()</code>, qui comme son nom l'indique affiche le modal propre au plateau sélectionné.
+Si l'opérateur veut avoir plus de détails sur une boxe spécifique, il peut cliquer sur le bouton "voir plus" qui appellera la fonction <code>affModal()</code>, qui comme son nom l'indique affiche le modal propre au plateau sélectionné.
 
-<code>function affModal() du fichier boxs.component.ts</code>
+<code>fonction affModal() du fichier boxs.component.ts</code>
 ```typescript
-  //variable pour savoir si on affiche ou non le détails d'un menu  
+  //variable pour savoir si on affiche ou non le détail d'un menu  
   showModal: boolean = false;
 
   //fonction d'affichage de la fenêtre de détails
@@ -290,7 +290,7 @@ Suite au passage de la variable <code>showModal</code> à true, ce code dans le 
             <button class="card-button" (click)="affModal(0)">Fermer</button>
         </div>
     </div>
-</body>
+
 ```
 Une modale contenant le nom, le prix, l'image, la composition en détails de la boxes ainsi qu'un bouton ajouter au panier et un bouton fermer apparaitra sur le navigateur de l'opérateur.Si le bouton "fermer" est cliquer, la fonction <code>affModal()</code> est appelé, et comme la variable <code>showModal</code> est à True, la fonction fait passer la variable à false donc le code devenu lisible, redeviens non lisible.
 
@@ -299,7 +299,7 @@ Une modale contenant le nom, le prix, l'image, la composition en détails de la 
 
  ### Affichage du panier et achat/suppression d'un ou plusieurs plateaux
 
-Concernant le panier affiché sur la gauche de la page, a l'aide de la fonction <code>getPanierItemList</code>, ainsi
+Concernant le panier affiché sur la gauche de la page, à l'aide de la fonction <code>getPanierItemList</code>, ainsi
 qu'une boucle ngFor, on affiche l'image, le nom et le prix des plateaux ajoutés.
 
 <code>getPanierItemList :</code>
@@ -336,8 +336,8 @@ qu'une boucle ngFor, on affiche l'image, le nom et le prix des plateaux ajoutés
             (click)=addToHistorique()>Payer</button></h3>
 </table>
 ``` 
-### Ajout d'une box dans le panier
-Pour ajouter une box dans le panier, l'opérateur pourra cliquer directement sur le bouton qui a pour class <code>bouton-cart</code>, ce qui appelera la fonction <code>addToCart</code>. Cette fonction ajoutera la box choisi par l'opérateur grâce à son id dans un tableau puis initialisera à la variable this.grandTotal la valeur reçu de la fonction this.crudService.getTotalPrice.Le prix totale est alors calculé.
+### Ajout d'une box de sushi dans le panier
+Pour ajouter une box dans le panier, l'opérateur pourra cliquer directement sur le bouton qui a pour class <code>bouton-cart</code>, ce qui appellera la fonction <code>addToCart</code>. Cette fonction ajoutera la box choisie par l'opérateur grâce à son id dans un tableau puis initialisera à la variable this.grandTotal la valeur reçu de la fonction this.crudService.getTotalPrice.Le prix totale est alors calculé.
 
 <code>function addToCart :</code>
 ````typescript
@@ -367,7 +367,7 @@ Voici un extrait vidéo d'un ajout d'une boxe dans le panier : [https://youtu.be
 
 ### Suppression d'une box dans le panier
 
-  Un bouton "supprimer" apparaît à droite de chaque box du panier, quant-on clique sur ce bouton, la fonction <code>removeItem</code> est appelé avec en paramètre, les informations de la box.
+  Un bouton "supprimer" apparaît à droite de chaque box du panier, quand-on clique sur ce bouton, la fonction <code>removeItem</code> est appelée avec en paramètre, les informations de la box.
 
   ![img](https://cdn.discordapp.com/attachments/391192279253254166/944264221808541766/Panier.PNG)
 
@@ -385,7 +385,7 @@ Voici un extrait vidéo d'un ajout d'une boxe dans le panier : [https://youtu.be
   }
   ````
 
-  ### Suppression de toutes les boxs du panier
+  ### Suppression de toutes les boxes du panier
 
 Un bouton "supprimer le panier" apparait au plus bas de notre panier. Quand ce bouton est cliqué, la fonction <code>emptyCart</code> est appelé. Cette fonction va appeler la fonction <code>removeAllCart</code> situé dans le service <code>crudService</code> puis va mettre à jour la valeur de la variable <code>grandTotal</code> en lui donnant comme valeur, le retour de la fonction <code>getTotalPrice</code> situé dans le service <code>crudService</code>.
 
@@ -402,7 +402,7 @@ Voici un extrait vidéo montrant l'utilisation du bouton "supprimer le panier" :
 
 ### Valider une commande
 
-A droite du totale de notre commande, se situe un bouton nommé "payer". Suite, à un clique sur ce bouton, la fonction <code>addToHistorique</code> va être appelé.  Cette fonction aura pour but de vérifier tout d'abord, si la commande n'est pas vide, en vérifiant si la variable <code>grandTotal</code> n'est pas égal à 0, puis d'ajouter une date avec <code>new Date()</code> puis d'envoyer dans la variable de type Array <code>histoData</code> situé dans le service <code>crudService</code> avec un push, notre date (<code>format(date)</code>), le prix de la commande(<code>getTotalPrice</code>) ainsi que notre Array <code>box</code> contenant toutes les boxs de la commande.
+A droite du totale de notre commande, se situe un bouton nommé "payer". Suite, à un clique sur ce bouton, la fonction <code>addToHistorique</code> va être appelé.  Cette fonction aura pour but de vérifier tout d'abord, si la commande n'est pas vide, en vérifiant si la variable <code>grandTotal</code> n'est pas égale à 0, puis d'ajouter une date avec <code>new Date()</code> puis d'envoyer dans la variable de type Array <code>histoData</code> situé dans le service <code>crudService</code> avec un push, notre date (<code>format(date)</code>), le prix de la commande(<code>getTotalPrice</code>) ainsi que notre Array <code>box</code> contenant toutes les boxes de la commande.
 Pour finir, cette fonction va d'abord vider l'Array <code>box</code>, l'Array <code>panierItemList</code> ainsi que redonner à la variable <code>grandTotal</code> une valeur de 0. Puis suite cela afin d'enregistrer chaque commande dans le local-storage, avec l'aide de <code>JSON.stringify</code>on va donner comme valeur à la variable <code>tabItems</code>, la valeur de la variable <code>histoData</code> puis ajouter au tableau <code>Historique</code> de notre stockage local, la valeur de la variable <code>tabItems</code>.
 
 ![img](https://cdn.discordapp.com/attachments/391192279253254166/944277663038726204/dregyfrhgjk.PNG)
@@ -434,12 +434,12 @@ Pour finir, cette fonction va d'abord vider l'Array <code>box</code>, l'Array <c
 
 ## Historique des commandes 
 
-Maintenant dans "historique-commande.component". Ce component a pour but de répertorier les commandes effectuées par l'opérateur. En effet, une fois la commande passée, l'opérateur peut consulter l'historique qui affiche l'ID de la commande, la date à laquelle la commande à été passé, le prix total ainsi que son statut (si oui ou non la commande fût bien payée).
+Maintenant dans "historique-commande.component". Ce component a pour but de répertorier les commandes effectuées par l'opérateur. En effet, une fois la commande passée, l'opérateur peut consulter l'historique qui affiche l'ID de la commande, la date exacte à la seconde près à laquelle la commande à été passée, le prix total ainsi que son statut (si oui ou non la commande fût bien payée).
 
 Voici la vue de notre historique :
 ![img](https://cdn.discordapp.com/attachments/391192279253254166/944281319855226911/ztgyerhujgtkh.PNG)
 
-Pour avoir cette vue, nous allons tout d'abord à l'initialisation de notre fichier <code>historique-commande.component.ts</code> récupérer nos données stocker dans le local storage, grâce à ce code :
+Pour avoir cette vue, nous allons tout d'abord à l'initialisation de notre fichier <code>historique-commande.component.ts</code> récupérer nos données stockées dans le local storage, grâce à ce code :
 ````typescript
 ngOnInit(): void {
     //on récupère l'historique (prix des commandes ainsi que leurs dates de payement) depuis le localstorage
@@ -473,13 +473,13 @@ Puis, dans notre code HTML, nous allons faire une boucle <code>*ngFor</code> afi
   </table>
 ````
 
-Si, l'opérateur souhaite supprimer l'historique des commandes, nous avons mit en place, un bouton qui, quant-il est cliqué, appele une fonction nommé <code>deleteHistorique()</code>. Cette fonction, a pour but de supprimer le tableau "Historique" de notre local storage.
+Si, l'opérateur souhaite supprimer l'historique des commandes, nous avons mis en place, un bouton qui, quand-il est cliqué, appelle une fonction nommé <code>deleteHistorique()</code>. Cette fonction, a pour but de supprimer le tableau "Historique" de notre local storage.
 
 <code>Fonction deleteHistorique :</code>
 ````typescript
 // fonction permettant de supprimer le tableau "Historique" de notre local storage
   deleteHistorique() {
-    if (confirm("Etes-vous sur de vouloir supprimer l'historique ?")) {
+    if (confirm("Etes-vous sûr de vouloir supprimer l'historique ?")) {
       localStorage.removeItem('Historique')
       location.reload();
     }
@@ -490,7 +490,7 @@ Notre historique étant enregistré dans le local storage, ne sera donc pas supp
 
 ### Page RGPD
 
-Cette page à pour but de présenter l'entreprise, de montrer les finalités des données clients récupérer, et les droits que peuvent demander les clients.
+Cette page a pour but de présenter l'entreprise, de montrer les finalités des données client récupéré, et les droits que peuvent demander les clients.
 
 ![img](https://cdn.discordapp.com/attachments/468472388431118346/920255888361672724/RGPD.PNG)
 
@@ -567,7 +567,7 @@ En tant que développeur, je met un place un système d'identification avec un m
 
 # Conclusion
 
-Pour conclure, ce projet nous à permis, le groupe brancodeurs 1 ainsi que le groupe brancodeurs 2, à revoir tout ce que nous avons vu en cours sur Angular. Telle que l'appelle à une API, les boucles ngFor, l'enregistrement de valeur dans le localStorage ainsi que la récupération de ces valeurs. Mais aussi, à travailler en distanciel pendant notre stage. Le seul reproche que l'ont pourraient faire à notre projet est que si l'on ajoute , des boxes de même nom, les boxes ne s'indentent pas, donc nous, nous retrouvons avec 3 boxes du même nom dans notre panier par exemple. Mais quant-on voit, notre premère version du projet, nous somme content du résultat finale.
+Pour conclure, ce projet nous à permis, le groupe brancodeurs 1 ainsi que le groupe brancodeurs 2, à revoir tout ce que nous avons vu en cours sur Angular. Telle que l'appelle à une API, les boucles ngFor, l'enregistrement de valeur dans le localStorage ainsi que la récupération de ces valeurs. Mais aussi, à travailler en distanciel pendant notre stage. Le seul reproche que l'ont pourraient faire à notre projet est que si l'on ajoute , des boxes du même nom, les boxes ne s'indentent pas, donc nous, nous retrouvons avec 3 boxes du même nom dans notre panier par exemple. Mais quant-on voit, notre premère version du projet, nous somme content du résultat finale.
 
 Première version :
 ![img](https://cdn.discordapp.com/attachments/901086910083108927/915299360529588285/Captuszdfergthyghre.PNG)
