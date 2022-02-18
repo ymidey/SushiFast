@@ -520,11 +520,11 @@ Test unitaire pour vérifier si mon titre s'affiche sur ma page <code>RGPD</code
 
 Test unitaire :
   
-![img](https://cdn.discordapp.com/attachments/901086910083108927/943077352760561674/TestUnitTitle.PNG)
+![img](https://cdn.discordapp.com/attachments/391192279253254166/944300075021119588/TestUnitTitle.PNG)
 
 Code de ma page html rgpd :
   
-![img](https://cdn.discordapp.com/attachments/901086910083108927/943077500823683102/TtitleRGPD.PNG)
+![img](https://cdn.discordapp.com/attachments/391192279253254166/944299811304251432/RGPD.PNG)
 
 Test unitaire pour vérifier si je recupère les réponses que j'attend de mon appel api.
 
