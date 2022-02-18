@@ -55,7 +55,7 @@ Les **attendus techniques** demandés :
 
 Présentation du projet : https://slam-vinci-melun.github.io/sio22/phase2/SP2-Angular-2021_22.pdf
 
-Dépôts GitHub : https://github.com/BGuiIlot/SushiFast
+Dépôts GitHub : https://github.com/ymidey/SushiBackup
 
 <div style="page-break-after: always"></div>
 
