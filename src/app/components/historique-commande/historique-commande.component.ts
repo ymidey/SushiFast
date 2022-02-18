@@ -9,8 +9,7 @@ import { CrudService } from "src/app/services/crud.service";
 export class HistoriqueCommandeComponent implements OnInit {
   //variablec qui stocke l'historique
   histo: any = [];
-  //variable qui stocke la date
-  now: string = ""
+
   constructor(public crudService: CrudService) { }
 
   ngOnInit(): void {
@@ -20,6 +19,8 @@ export class HistoriqueCommandeComponent implements OnInit {
     });
 
   }
+
+  // fonction permettant de supprimer le tableau "Historique" de notre local storage
   deleteHistorique() {
     if (confirm("Etes-vous sur de vouloir supprimer l'historique ?")) {
       localStorage.removeItem('Historique')
@@ -27,6 +28,7 @@ export class HistoriqueCommandeComponent implements OnInit {
     }
   }
 
+  // fonction permettant d'arrondir à deux nombres après la virgule
   transform(value: number): string {
     return `${value.toFixed(2)} €`;
   }
