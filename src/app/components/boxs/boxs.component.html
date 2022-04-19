@@ -42,6 +42,8 @@
 
 <table class="tablepanier">
     <h2 style="text-align: center;">panier</h2>
+    <p>Nom ou table du client : <input type="text" [(ngModel)]="client" /></p>
+
     <thead>
         <tr style="color: white;">
             <th></th>
@@ -60,7 +62,8 @@
             </td>
         </tr>
     </tbody>
-    <h3 style="text-align: center;" class="total-panier">Total : {{grandTotal}} €<button class="cart-button"
-            (click)=addToHistorique()>Payer</button></h3>
+    <h3 style="text-align: center;" class="total-panier">Total : {{grandTotal}} €</h3>
+    <p>CodePromo : <input type="text" [(ngModel)]="codePromo" /></p>
+    <button class="cart-button" (click)=addToHistorique()>Payer</button>
     <button class="cart-button-all" (click)=emptycart()>Supprimer le panier</button>
 </table>

@@ -30,6 +30,7 @@
   <table id="historique">
     <tr>
       <th width="10%">Order ID</th>
+      <th width="10%">Nom du client</th>
       <th width="15%">Date</th>
       <th width="25%">price</th>
       <th width="25%">Status </th>
@@ -37,6 +38,7 @@
     </tr>
     <tr *ngFor="let hist of histo let i = index">
       <td>{{i + 1}}</td>
+      <th>{{hist[3]}}</th>
       <th>{{hist[1]}}</th>
       <th>{{hist[0]}} €</th>
       <th>Paid</th>

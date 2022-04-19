@@ -18,6 +18,8 @@ export class BoxsComponent implements OnInit {
   //prix total de la commande en cours
   grandTotal: number = 0;
 
+  client: string = "";
+  codePromo: string = "";
   //on récupère le crudService
   constructor(public crudService: CrudService) { }
   //a l'initialisation on récupère toutes les menu avec fetchBoxes
@@ -59,13 +61,29 @@ export class BoxsComponent implements OnInit {
 
   //ajout de la commande a l'historique
   addToHistorique() {
-    if (this.grandTotal != 0) {
+    if (this.grandTotal != 0 && this.client != "") {
       var date = new Date();
       const formatDate = (current_datetime: any) => {
         let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear() + " " + current_datetime.getHours() + "h" + current_datetime.getMinutes() + "m" + current_datetime.getSeconds() + "s";
         return formatted_date
       }
-      this.crudService.histoData.push([this.crudService.getTotalPrice(), formatDate(date), this.box]);
+      if (this.codePromo != "" && this.codePromo != "COUPON-PAQUES-2022" && this.codePromo != "RISTOURNE-PAQUES-2022") {
+        alert("Code promo invalide");
+        return
+      }
+
+      if (this.codePromo == "COUPON-PAQUES-2022") {
+        this.grandTotal = this.grandTotal - (this.grandTotal * 0.2);
+      }
+      if (this.codePromo == "RISTOURNE-PAQUES-2022") {
+        if (this.grandTotal > 20) {
+          this.grandTotal = this.grandTotal - 10;
+        } else {
+          alert("Votre commande ne dépasse pas 20€, ce bon de réduction ne peut donc pas être utilisé, utilisé plutot le code Promo : COUPON-PAQUES-2022 (-20% sur votre commande)");
+          return
+        }
+      }
+      this.crudService.histoData.push([this.grandTotal, formatDate(date), this.box, this.client, this.codePromo]);
       //   console.log(this.crudService.histoData);
       this.box = []
       this.crudService.panierItemList = []
@@ -75,7 +93,7 @@ export class BoxsComponent implements OnInit {
       localStorage.setItem('Historique', tabItems);
       alert("Payement effectué avec succès, bonne appétit 🍽")
     } else {
-      alert("Veuillez choissir un plat avant de commander !!! ")
+      alert("Veuillez choissir un plat avant de commander ou informer votre nom du client ou le numéro de sa table dans le formulaire le demandant !!! ")
     }
   }
   //ajout d'un menu a la commande
