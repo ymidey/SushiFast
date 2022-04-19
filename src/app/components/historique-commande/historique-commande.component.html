@@ -29,20 +29,26 @@
   </div>
   <table id="historique">
     <tr>
-      <th width="10%">Order ID</th>
-      <th width="10%">Nom du client</th>
+      <th width="20%">Nom ou numéro table du client</th>
       <th width="15%">Date</th>
-      <th width="25%">price</th>
-      <th width="25%">Status </th>
+      <th width="25%">prix</th>
+      <th width="15%">Status</th>
       <th width="25%">Détails</th>
+      <th width="25%">Code promo</th>
     </tr>
     <tr *ngFor="let hist of histo let i = index">
-      <td>{{i + 1}}</td>
-      <th>{{hist[3]}}</th>
+      <!--On affiche le numéro de la table ou le nom du client-->
+      <th>{{hist[4]}}</th>
+      <!--On affiche la date à laquelle la commande à été passé -->
       <th>{{hist[1]}}</th>
+      <!--On affiche le prix totale de la commande-->
       <th>{{hist[0]}} €</th>
+      <!--On affiche le status de la commande -->
       <th>Paid</th>
+      <!--On affiche la liste de toutes les boxs de la commandes -->
       <th>{{hist[2]}}</th>
+      <!--On affiche le code promotionnel renseigné lors de la commande -->
+      <th>{{hist[3]}}</th>
     </tr>
   </table>
   <button class="card-button" (click)="deleteHistorique()">Supprimer l'historique</button>

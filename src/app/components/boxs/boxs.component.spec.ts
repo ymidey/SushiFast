@@ -25,6 +25,13 @@ describe('BoxesComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  describe('codePromo', () => {
+    // Ce test est fait pour vérifier que le code promo est bien récupéré
+    it('doit récupérer le code promotionnel', () => {
+      component.codePromo = 'COUPON-PAQUES-2022';
+      expect(component.codePromo).toBe('COUPON-PAQUES-2022');
+    });
+  });
 
   describe('showModal', () => {
     it('ShowModal doit passer à true quand il est a false et que la fonction affModal est appelé', () => {

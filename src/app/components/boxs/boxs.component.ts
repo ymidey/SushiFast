@@ -17,9 +17,11 @@ export class BoxsComponent implements OnInit {
   showModal: boolean = false;
   //prix total de la commande en cours
   grandTotal: number = 0;
-
+  //récupère le nom ou le numéro de table du client 
   client: string = "";
+  //récupère le code promotionnel renseigné
   codePromo: string = "";
+
   //on récupère le crudService
   constructor(public crudService: CrudService) { }
   //a l'initialisation on récupère toutes les menu avec fetchBoxes
@@ -61,29 +63,39 @@ export class BoxsComponent implements OnInit {
 
   //ajout de la commande a l'historique
   addToHistorique() {
+    // Si le panier n'est pas vide et si la zone de saisi pour les informations du client n'est pas vide, on ajoute la commande a l'historique
     if (this.grandTotal != 0 && this.client != "") {
       var date = new Date();
       const formatDate = (current_datetime: any) => {
         let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear() + " " + current_datetime.getHours() + "h" + current_datetime.getMinutes() + "m" + current_datetime.getSeconds() + "s";
         return formatted_date
       }
+      // On vérifie si un code promotionnel est saisie et si le code promotionnel ne correspond pas à un code promotionnel fonctionnel
       if (this.codePromo != "" && this.codePromo != "COUPON-PAQUES-2022" && this.codePromo != "RISTOURNE-PAQUES-2022") {
+        // Si c'est le cas, on alerte l'utilisateur et on arrete la fonction addToHistorique
         alert("Code promo invalide");
         return
       }
-
+      // On vérifie si le code promotionnel est égal à "COUPON-PAQUES-2022"
       if (this.codePromo == "COUPON-PAQUES-2022") {
+        // Si c'est le cas, on applique le code promotionnel en baissant de 20% le prix total de la commande (notre variable this.grandTotal)
         this.grandTotal = this.grandTotal - (this.grandTotal * 0.2);
       }
+      // On vérifie si le code promotionnel est égal à "RISTOURNE-PAQUES-2022"
       if (this.codePromo == "RISTOURNE-PAQUES-2022") {
+        // On vérifie ensuite si le prix total de la commande est supérieur à 20€ (notre variable this.grandTotal doit donc être supérieur à 20)
+
         if (this.grandTotal > 20) {
+          // Si c'est le cas, on applique le code promotionnel en baissant de 10% le prix total de la commande (notre variable this.grandTotal)
           this.grandTotal = this.grandTotal - 10;
         } else {
+          // Sinon, on averti l'utilisateur que le code promotionnel n'est pas valide, on lui indique qu'un autre code peut-etre utilisé puis on arrete la fonction addToHistorique
           alert("Votre commande ne dépasse pas 20€, ce bon de réduction ne peut donc pas être utilisé, utilisé plutot le code Promo : COUPON-PAQUES-2022 (-20% sur votre commande)");
           return
         }
       }
-      this.crudService.histoData.push([this.grandTotal, formatDate(date), this.box, this.client, this.codePromo]);
+      // On crée une commande avec les informations du client, le prix total de la commande et la date de la commande
+      this.crudService.histoData.push([this.grandTotal, formatDate(date), this.box, this.codePromo, this.client]);
       //   console.log(this.crudService.histoData);
       this.box = []
       this.crudService.panierItemList = []

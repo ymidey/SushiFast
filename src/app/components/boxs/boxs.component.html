@@ -42,6 +42,7 @@
 
 <table class="tablepanier">
     <h2 style="text-align: center;">panier</h2>
+    <!--Zone de saisi pour renseigner le nom ou la table du client (Formatage si Table du client choisi = Table-xx), la saisi est obligatoire -->
     <p>Nom ou table du client : <input type="text" [(ngModel)]="client" /></p>
 
     <thead>
@@ -63,6 +64,7 @@
         </tr>
     </tbody>
     <h3 style="text-align: center;" class="total-panier">Total : {{grandTotal}} €</h3>
+    <!--Zone de saisi pour renseigner le code promotionnel choisi, la saisie n'est pas obligatoire-->
     <p>CodePromo : <input type="text" [(ngModel)]="codePromo" /></p>
     <button class="cart-button" (click)=addToHistorique()>Payer</button>
     <button class="cart-button-all" (click)=emptycart()>Supprimer le panier</button>
