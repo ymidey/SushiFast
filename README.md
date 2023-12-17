@@ -59,16 +59,6 @@ Dépôts GitHub : https://github.com/ymidey/SushiBackup
 
 <div style="page-break-after: always"></div>
 
-### *Prérequis*
-
-- Environnement de travail opérationnel
-- Savoir créer un projet Angular avec des composants.
-- Avoir compris les modes d’échanges entre Parent et Enfant d’élément du DOM
-  Voir : https://angular.io/guide/inputs-outputs
-- Avoir une bonne connaissance de base des langage de programmation (Javascript,Typescript)
-- Et comprendre l'utilisation du framework Angular.
-- Avoir une bonne connaissance de MongoDB
-
 ### *Matériels utilisés :*
 
 - OS : Windows 10
